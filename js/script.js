@@ -62,53 +62,72 @@ prev.onclick = () => {
 
 // Tabs
 
-const tabs = document.querySelectorAll('.tabheader__item')
-const tabsContent = document.querySelectorAll('.tabcontent')
+
+
+const tabs = document.querySelectorAll('.tabcontent');
+const tabButtons = document.querySelectorAll('.tabheader__items .tabheader__item')
 
 
 
-hideTabContent()
+tabsShow(0)
 
-function hideTabContent() {
-    tabsContent.forEach((item) => {
-        item.classList.add('hide')
-        item.classList.remove('show', 'fade')
-    })
 
-    tabs.forEach((tab) => {
-        tab.classList.remove('tabheader__item_active')
-    })
+function tabsShow(n) {
+    tabs.forEach(tab => tab.classList.add('hide','fade') )
+    tabs[n].classList.remove('hide')
 }
 
 
-showTabContent()
-
-function showTabContent(n = 0) {
-    tabsContent[n].classList.add('show', 'fade')
-    tabsContent[n].classList.remove('hide')
-    tabs[n].classList.add('tabheader__item_active')
-}
-
-
-
-const tabsData = document.querySelectorAll('.tabcontent[data-info]');
-const theaderData = document.querySelectorAll('.tabheader__item[data-info]');
-const itemsBtn = document.querySelectorAll('.tabheader__item')
-function showData(n = 0) {
-    if (theaderData === tabsData) {
-        hideTabContent()
-showTabContent()
-    }
-
-
-}
-showData()
-
-itemsBtn.forEach((btn) =>{
-    btn.onclick = () =>{
-        showData()
+tabButtons.forEach((btn,idx) =>{
+    btn.onclick = () => {
+        tabButtons.forEach((btn)=> btn.classList.remove('tabheader__item_active'))
+        btn.classList.add('tabheader__item_active')
+        tabsShow(idx)
     }
 } )
+
+
+//timer
+
+const minView = document.querySelector('#minutes')
+const secView = document.querySelector('#seconds')
+const hoursView = document.querySelector('#hours')
+const dayView = document.querySelector('#days')
+
+
+let seconds = 10
+
+let minutes = 59
+let hours = 20
+let days = 12
+
+
+let interval = setInterval(() => {
+    seconds--
+    if (seconds <=0 ) {
+        seconds = 59
+        minutes--
+    }
+    if (minutes <=0 ) {
+        minutes = 59
+        hours--
+    }
+    if ( hours <=0 ) {
+        hours = 23 
+        days--
+    }
+    if ( days <=0 ) {
+      
+    }
+
+    secView.innerText = seconds
+    minView.innerText = minutes 
+    hoursView.innerText = hours
+    dayView.innerText = days
+
+},1000)
+
+
 
 
 
