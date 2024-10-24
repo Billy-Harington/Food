@@ -174,6 +174,134 @@ function setTimer(endTime, selector) {
                     y: Math.random() - 0.3
                  }
             });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
         }
 
    
