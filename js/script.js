@@ -131,7 +131,7 @@ tabButtons.forEach((btn,idx) =>{
 
 
 // Timer
-const deadLine = "2024-10-24 18:14";
+const deadLine = "2024-10-24 18:20";
 
 function getRemainingTime(endTime) {
     const t = Date.parse(endTime) - Date.parse(new Date()),
