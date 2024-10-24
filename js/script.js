@@ -87,45 +87,105 @@ tabButtons.forEach((btn,idx) =>{
 } )
 
 
-//timer
+// //timer old
 
-const minView = document.querySelector('#minutes')
-const secView = document.querySelector('#seconds')
-const hoursView = document.querySelector('#hours')
-const dayView = document.querySelector('#days')
-
-
-let seconds = 10
-
-let minutes = 59
-let hours = 20
-let days = 12
+// const minView = document.querySelector('#minutes')
+// const secView = document.querySelector('#seconds')
+// const hoursView = document.querySelector('#hours')
+// const dayView = document.querySelector('#days')
 
 
-let interval = setInterval(() => {
-    seconds--
-    if (seconds <=0 ) {
-        seconds = 59
-        minutes--
-    }
-    if (minutes <=0 ) {
-        minutes = 59
-        hours--
-    }
-    if ( hours <=0 ) {
-        hours = 23 
-        days--
-    }
-    if ( days <=0 ) {
+// let seconds = 10
+
+// let minutes = 59
+// let hours = 20
+// let days = 12
+
+
+// let interval = setInterval(() => {
+//     seconds--
+//     if (seconds <=0 ) {
+//         seconds = 59
+//         minutes--
+//     }
+//     if (minutes <=0 ) {
+//         minutes = 59
+//         hours--
+//     }
+//     if ( hours <=0 ) {
+//         hours = 23 
+//         days--
+//     }
+//     if ( days <=0 ) {
       
+//     }
+
+//     secView.innerText = seconds
+//     minView.innerText = minutes 
+//     hoursView.innerText = hours
+//     dayView.innerText = days
+
+// },1000)
+
+
+
+
+// Timer New!
+const deadLine = "2024-10-24 18:15";
+
+function getRemainingTime(endTime) {
+    const t = Date.parse(endTime) - Date.parse(new Date()),
+        days = Math.floor((t / 1000) / 60 / 60 / 24),
+        hours = Math.floor((t / 1000) / 60 / 60 % 24),
+        minutes = Math.floor((t / 1000) / 60 % 60),
+        seconds = Math.floor((t / 1000) % 60);
+
+    return { t, days, hours, minutes, seconds };
+}
+
+function setTimer(endTime, selector) {
+    const t = document.querySelector(selector),
+        days = t.querySelector('#days'),
+        hours = t.querySelector('#hours'),
+        minutes = t.querySelector('#minutes'),
+        seconds = t.querySelector('#seconds'),
+        interval = setInterval(updateTime, 1000);
+
+    function updateTime() {
+        const t = getRemainingTime(endTime);
+
+  
+        if (t.t <= 0) {
+            days.innerHTML = '00';
+            hours.innerHTML = '00';
+            minutes.innerHTML = '00';
+            seconds.innerHTML = '00';
+            clearInterval(interval); 
+            launchConfetti()
+            
+        }
+        function launchConfetti() {
+            
+            confetti({
+                particleCount: 1000,
+                spread: 1000,
+                origin: {
+                    x: Math.random(),
+                    y: Math.random() - 0.3
+                 }
+            });
+        }
+
+   
+        days.innerHTML = String(time.days).padStart(2, '0');
+        hours.innerHTML = String(time.hours).padStart(2, '0');
+        minutes.innerHTML = String(time.minutes).padStart(2, '0');
+        seconds.innerHTML = String(time.seconds).padStart(2, '0');
     }
+}
 
-    secView.innerText = seconds
-    minView.innerText = minutes 
-    hoursView.innerText = hours
-    dayView.innerText = days
-
-},1000)
+setTimer(deadLine, ".timer");
+setTimer("2025-01-04 00:00", ".timer-seconds");
 
 
 
