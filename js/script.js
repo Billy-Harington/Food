@@ -272,14 +272,14 @@ const result = document.querySelector('.calculating__result')
 function calculateCalories(u) {
     
 
-    let bmr;
+    let jaska;
     if (u.gender === 'woman') {
-        bmr = 655.1 + (9.563 * u.weight) + (1.85 * u.height) - (4.676 * u.age);
+        jaska = 655.1 + (9.563 * u.weight) + (1.85 * u.height) - (4.676 * u.age);
     } else {
-        bmr = 66.5 + (13.75 * u.weight) + (5.003 * u.height) - (6.775 * u.age);
+        jaska = 66.5 + (13.75 * u.weight) + (5.003 * u.height) - (6.775 * u.age);
     }
 
-    const calories = Math.round(bmr * u.activity);
+    const calories = Math.round(jaska * u.activity);
     result.innerHTML = ` <div class="calculating__result">
                         <span>${calories}</span> ккал
                     </div>`
