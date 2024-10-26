@@ -206,102 +206,7 @@ function setTimer(endTime, selector) {
                     y: Math.random() - 0.3
                  }
             });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
-            confetti({
-                particleCount: 1000,
-                spread: 1000,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() - 0.3
-                 }
-            });
+
         }
 
    
@@ -313,6 +218,75 @@ function setTimer(endTime, selector) {
 }
 
 setTimer(deadLine, ".timer");
+
+
+
+
+
+// inputs 
+
+
+const genders = document.querySelectorAll('#gender .calculating__choose-item')
+const calculating = document.querySelectorAll('input')
+const userData = {
+    gender:"woman"
+}
+
+const activities = document.querySelectorAll('.calculating__choose_big .calculating__choose-item')
+
+
+
+genders.forEach((gender) => {
+    console.log(gender);
+    
+    gender.onclick = () => {
+        genders.forEach((gender) => gender.classList.remove('calculating__choose-item_active'))
+        gender.classList.add('calculating__choose-item_active')
+      
+        userData.gender = gender.getAttribute('data-g')
+    }
+})
+
+
+calculating.forEach(calc =>{
+    calc.oninput = () =>{
+       userData[calc.id] = calc.value
+        
+    }
+})
+
+
+activities.forEach((activity) => {
+   
+    
+    activity.onclick = () => {
+        activities.forEach((activity) => activity.classList.remove('calculating__choose-item_active'))
+        activity.classList.add('calculating__choose-item_active')
+      
+        userData.activity = activity.getAttribute('data-activity')
+        calculateCalories(userData)
+    }
+})
+
+const result = document.querySelector('.calculating__result')
+function calculateCalories(u) {
+    
+
+    let bmr;
+    if (u.gender === 'woman') {
+        bmr = 655.1 + (9.563 * u.weight) + (1.85 * u.height) - (4.676 * u.age);
+    } else {
+        bmr = 66.5 + (13.75 * u.weight) + (5.003 * u.height) - (6.775 * u.age);
+    }
+
+    const calories = Math.round(bmr * u.activity);
+    result.innerHTML = ` <div class="calculating__result">
+                        <span>${calories}</span> ккал
+                    </div>`
+
+
+}
+
 
 
 
